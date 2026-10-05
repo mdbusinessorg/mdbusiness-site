@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-coal: #111111;
+  --color-surface: #161616;
+  --color-card: #1b1b1b;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-bone: #f2efe9;
+  --color-mist: #b9b4aa;
+  --color-dim: #7a766d;
+  --color-gold: #e8622c;
+  --color-gold-soft: #ff7a3d;
+
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+html {
+  background: var(--color-ink);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-ink);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #0a0a0a;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* grain overlay — extremely subtle, static SVG noise */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* custom cursor */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+}
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    width 0.25s var(--ease-out-expo),
+    height 0.25s var(--ease-out-expo),
+    background-color 0.25s,
+    border-color 0.25s;
+}
+.cursor-ring.is-active {
+  width: 72px;
+  height: 72px;
+  background: rgba(232, 98, 44, 0.9);
+  border-color: transparent;
+}
+.cursor-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #0a0a0a;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.cursor-ring.is-active .cursor-label {
+  opacity: 1;
+}
+@media (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+@media (pointer: fine) {
+  .has-cursor,
+  .has-cursor a,
+  .has-cursor button,
+  .has-cursor [role="button"] {
+    cursor: none;
+  }
+}
+
+/* line reveal helper */
+.rl {
+  display: block;
+  overflow: hidden;
+}
+.rl > span {
+  display: block;
+  transform: translateY(110%);
+  will-change: transform;
+}
+
+/* service row */
+.service-row {
+  border-top: 1px solid var(--color-line);
+  transition: background-color 0.4s;
+}
+.service-row:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+.service-row:hover {
+  background: var(--color-surface);
+}
+.service-row .svc-img {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.5s var(--ease-inout);
+}
+.service-row:hover .svc-img {
+  clip-path: inset(0 0 0% 0);
+}
+.service-row .svc-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.5s var(--ease-out-expo),
+    opacity 0.4s;
+}
+.service-row:hover .svc-desc,
+.service-row.open .svc-desc {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* horizontal scroll pin */
+.hscroll-track {
+  will-change: transform;
+}
+
+/* nav shrink */
+.nav-shell {
+  transition:
+    background-color 0.4s,
+    backdrop-filter 0.4s,
+    padding 0.4s,
+    border-color 0.4s;
+}
+.nav-shell.scrolled {
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(14px);
+  border-color: var(--color-line);
+}
+
+/* magnetic buttons handled by JS */
+
+/* marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+/* image base */
+.img-rounded {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .rl > span {
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
