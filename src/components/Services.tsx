@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SERVICES } from '../content'
+import { SERVICES } from '../data/services'
 import { Reveal, SplitWords } from '../motion/Reveal'
 
 export function Services() {

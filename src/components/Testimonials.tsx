@@ -1,7 +1,8 @@
-import { TESTIMONIALS } from '../content'
+import { TESTIMONIALS } from '../data/testimonials'
 import { Reveal, SplitWords } from '../motion/Reveal'
 
 export function Testimonials() {
+  if (TESTIMONIALS.length === 0) return null
   const [main, ...rest] = TESTIMONIALS
   return (
     <section className="bg-ink py-28 md:py-36">

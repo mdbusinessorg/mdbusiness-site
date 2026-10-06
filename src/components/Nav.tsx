@@ -2,14 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap, reducedMotion } from '../motion/gsap'
 import { useCart } from '../state/cart'
 import { Magnetic } from '../motion/Magnetic'
-
-const LINKS = [
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Projectos', href: '#projectos' },
-  { label: 'Planos', href: '#planos' },
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Contacto', href: '#contacto' },
-]
+import { NAV_LINKS as LINKS } from '../data/navigation'
+import { CONTACT } from '../data/contact'
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -129,8 +123,8 @@ export function Nav() {
             ))}
           </div>
           <div className="px-8 pb-10 flex items-center justify-between text-sm text-dim">
-            <span>mdbusinessorg@gmail.com</span>
-            <span>+244 934 859 240</span>
+            <span>{CONTACT.email}</span>
+            <span>{CONTACT.phone}</span>
           </div>
         </div>
       )}

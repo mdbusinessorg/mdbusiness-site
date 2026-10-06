@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap, reducedMotion } from '../motion/gsap'
 import { useCart, fmtKz } from '../state/cart'
-import { WHATSAPP } from '../content'
+import { OrderService } from '../lib/services'
 
 export function CartDrawer() {
   const { items, open, setOpen, remove, clear } = useCart()
@@ -20,11 +20,7 @@ export function CartDrawer() {
   }, [open])
 
   const total = items.reduce((s, i) => s + (i.price ?? 0), 0)
-  const waText = encodeURIComponent(
-    `Olá MD Business! Quero confirmar o meu pedido:\n\n${items
-      .map((i) => `• ${i.name} — ${fmtKz(i.price)}`)
-      .join('\n')}\n\nTotal estimado: ${fmtKz(total)}`,
-  )
+  const orderUrl = OrderService.buildOrderUrl(items).data
 
   return (
     <div className={`fixed inset-0 z-[96] ${open ? '' : 'pointer-events-none'}`} aria-hidden={!open}>
@@ -87,7 +83,7 @@ export function CartDrawer() {
               <span className="font-display font-900 text-3xl text-bone">{fmtKz(total)}</span>
             </div>
             <a
-              href={`${WHATSAPP}?text=${waText}`}
+              href={orderUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={clear}

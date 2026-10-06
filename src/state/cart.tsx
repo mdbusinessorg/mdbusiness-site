@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from 'react'
-import type { Plan } from '../content'
+import type { Plan } from '../data/products'
 
 interface CartCtx {
   items: Plan[]

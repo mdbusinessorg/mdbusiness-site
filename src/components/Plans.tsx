@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import { PLANS, type Plan } from '../content'
+import { type Plan } from '../data/products'
+import { ProductService } from '../lib/services'
 import { Reveal, SplitWords } from '../motion/Reveal'
 import { fmtKz, useCart } from '../state/cart'
 import { Magnetic } from '../motion/Magnetic'
 
 const GROUPS = ['Todos', 'Landing Pages', 'Websites', 'Corporativo'] as const
+
+const PLANS_DATA = ProductService.list().data
 
 export function Plans() {
   const [g, setG] = useState<(typeof GROUPS)[number]>('Todos')
@@ -52,7 +55,7 @@ export function Plans() {
         </div>
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {PLANS.filter(filter).map((p, i) => {
+          {PLANS_DATA.filter(filter).map((p, i) => {
             const featured = p.id === 'lp-cine' || p.id === 'web-pro'
             return (
               <Reveal key={p.id} delay={(i % 3) * 0.08}>

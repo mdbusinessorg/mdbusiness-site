@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FAQS } from '../content'
+import { FAQS } from '../data/faq'
 import { Reveal, SplitWords } from '../motion/Reveal'
 
 export function Faq() {

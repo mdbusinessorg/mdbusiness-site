@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap, reducedMotion } from '../motion/gsap'
-import { PROJECTS } from '../content'
+import { PROJECTS } from '../data/projects'
 import { Reveal, SplitWords } from '../motion/Reveal'
 
 export function Work() {
@@ -38,11 +38,11 @@ export function Work() {
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 mb-10 md:mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>
             <Reveal>
-              <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6">Projectos de Referência</p>
+              <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6">O Que Entregamos</p>
             </Reveal>
             <SplitWords
               as="h2"
-              text="Resultados reais para marcas que decidiram liderar."
+              text="O tipo de impacto digital que entregamos."
               className="font-display font-800 text-4xl md:text-6xl tracking-tight text-bone max-w-3xl"
             />
           </div>

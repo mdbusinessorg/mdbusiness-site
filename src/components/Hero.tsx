@@ -2,12 +2,6 @@ import { useEffect, useRef } from 'react'
 import { gsap, reducedMotion } from '../motion/gsap'
 import { Magnetic } from '../motion/Magnetic'
 
-const STATS = [
-  { n: '30+', l: 'Projectos entregues' },
-  { n: '300%', l: 'Conversão média' },
-  { n: '24h', l: 'Resposta média' },
-]
-
 export function Hero({ started }: { started: boolean }) {
   const root = useRef<HTMLElement>(null)
   const bg = useRef<HTMLDivElement>(null)
@@ -57,7 +51,7 @@ export function Hero({ started }: { started: boolean }) {
       <div ref={bg} className="absolute inset-0 will-change-transform">
         <div className="hero-img absolute right-0 top-0 h-full w-full md:w-[58%]">
           <img
-            src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1400&q=75&auto=format&fit=crop"
+            src="/img/hero.jpg"
             alt=""
             className="h-full w-full object-cover opacity-60 md:opacity-80"
           />
@@ -83,14 +77,15 @@ export function Hero({ started }: { started: boolean }) {
             <p className="text-mist text-lg max-w-[280px] text-right leading-relaxed opacity-0">
               Design que entrega resultados reais — interfaces cinematográficas para marcas que decidiram liderar.
             </p>
-            <div className="flex flex-col gap-5">
-              {STATS.map((s) => (
-                <div key={s.l} className="text-right opacity-0">
-                  <div className="font-display font-800 text-4xl xl:text-5xl text-gold">{s.n}</div>
-                  <div className="text-xs uppercase tracking-widest text-dim mt-1">{s.l}</div>
-                </div>
-              ))}
-            </div>
+            <Magnetic className="opacity-0">
+              <a
+                href="#contacto"
+                className="group inline-flex items-center gap-3 px-7 py-4 rounded-full border border-gold/60 text-gold font-display font-700 text-sm uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors"
+              >
+                Falar connosco
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+            </Magnetic>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 import { Reveal, Parallax } from '../motion/Reveal'
-import { EMAIL, WHATSAPP } from '../content'
+import { CONTACT } from '../data/contact'
 
 const COLS = [
   {
@@ -26,7 +26,7 @@ const COLS = [
       ['Instagram', 'https://instagram.com/md_business.ao'],
       ['Facebook', 'https://facebook.com/mdbusinessao'],
       ['LinkedIn', 'https://linkedin.com/company/md-business-ao'],
-      ['WhatsApp', WHATSAPP],
+      ['WhatsApp', CONTACT.whatsapp],
     ],
   },
 ]
@@ -44,10 +44,10 @@ export function Footer() {
             <p className="text-dim text-sm max-w-xs leading-relaxed">
               Sistemas de alto desempenho para organizações que definem o futuro. O seu parceiro estratégico em toda Angola.
             </p>
-            <a href={`mailto:${EMAIL}`} className="block text-mist text-sm mt-4 hover:text-gold transition-colors">
-              {EMAIL}
+            <a href={`mailto:${CONTACT.email}`} className="block text-mist text-sm mt-4 hover:text-gold transition-colors">
+              {CONTACT.email}
             </a>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="block text-mist text-sm mt-1 hover:text-gold transition-colors">
+            <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="block text-mist text-sm mt-1 hover:text-gold transition-colors">
               +244 934 859 240
             </a>
           </div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap, reducedMotion } from '../motion/gsap'
-import { WHATSAPP } from '../content'
+import { CONTACT } from '../data/contact'
 import { Magnetic } from '../motion/Magnetic'
 import { Reveal } from '../motion/Reveal'
 
@@ -29,7 +29,7 @@ export function Cta() {
     <section ref={sec} id="contacto" className="relative overflow-hidden bg-ink">
       <div ref={bg} className="absolute inset-0 will-change-transform">
         <img
-          src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1600&q=70&auto=format&fit=crop"
+          src="/img/cta.jpg"
           alt=""
           className="w-full h-[130%] object-cover opacity-35"
           loading="lazy"
@@ -54,7 +54,7 @@ export function Cta() {
         <Reveal delay={0.3} className="mt-12">
           <Magnetic>
             <a
-              href={WHATSAPP}
+              href={CONTACT.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gold text-ink font-display font-800 text-base uppercase tracking-wider hover:bg-gold-soft transition-colors"

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { PLANS, WHATSAPP } from '../content'
+import { PLANS } from '../data/products'
+import { CONTACT } from '../data/contact'
 import { fmtKz as fmt } from '../state/cart'
 
 interface Msg {
@@ -76,7 +77,7 @@ export function Carla() {
               </p>
             </div>
             <a
-              href={WHATSAPP}
+              href={CONTACT.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="ml-auto text-xs text-gold border border-gold/40 rounded-full px-3 py-1.5 hover:bg-gold hover:text-ink transition-colors"

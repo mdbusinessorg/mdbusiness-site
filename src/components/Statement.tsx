@@ -1,5 +1,5 @@
 import { Reveal, SplitWords, Parallax } from '../motion/Reveal'
-import { PAIN_POINTS } from '../content'
+import { PAIN_POINTS } from '../data/faq'
 
 /** Editorial "crafting" section — big heading + supporting copy + floating image composition */
 export function Statement() {
@@ -37,7 +37,7 @@ export function Statement() {
           <Parallax speed={0.08} className="absolute top-0 right-0 w-[62%]">
             <div className="img-rounded aspect-[4/5]" data-cursor="ver">
               <img
-                src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=70&auto=format&fit=crop"
+                src="/img/statement-1.jpg"
                 alt="Trabalho de estúdio"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -47,7 +47,7 @@ export function Statement() {
           <Parallax speed={0.16} className="absolute bottom-[18%] left-0 w-[46%]">
             <div className="img-rounded aspect-square">
               <img
-                src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=700&q=70&auto=format&fit=crop"
+                src="/img/statement-2.jpg"
                 alt="Detalhe de design"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -57,7 +57,7 @@ export function Statement() {
           <Parallax speed={0.22} className="absolute bottom-0 right-[8%] w-[34%]">
             <div className="img-rounded aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600&q=70&auto=format&fit=crop"
+                src="/img/statement-3.jpg"
                 alt="Interface em desenvolvimento"
                 className="w-full h-full object-cover"
                 loading="lazy"
