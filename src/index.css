@@ -163,7 +163,7 @@ body {
 }
 .service-row:hover .svc-desc,
 .service-row.open .svc-desc {
-  max-height: 200px;
+  max-height: 520px;
   opacity: 1;
 }
 
@@ -199,6 +199,13 @@ body {
 }
 .marquee-track {
   animation: marquee 28s linear infinite;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* image base */

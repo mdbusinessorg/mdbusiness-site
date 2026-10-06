@@ -6,22 +6,22 @@ export function Services() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section id="servicos" className="relative bg-ink py-28 md:py-36">
+    <section id="servicos" className="relative bg-ink py-20 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-14">
           <div>
             <Reveal>
               <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6">Nossos Serviços</p>
             </Reveal>
             <SplitWords
               as="h2"
-              text="Soluções que elevam a sua marca."
+              text="Marketing que atrai. Software que sustenta."
               className="font-display font-800 text-4xl md:text-6xl tracking-tight text-bone"
             />
           </div>
           <Reveal delay={0.1}>
             <p className="text-dim text-sm max-w-xs">
-              Desenvolvemos soluções adaptadas às necessidades operacionais e estratégicas de cada cliente.
+              Do primeiro post ao sistema interno: tudo o que a sua empresa precisa no digital, num só parceiro.
             </p>
           </Reveal>
         </div>
@@ -37,13 +37,16 @@ export function Services() {
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && setOpen(open === i ? null : i)}
             >
-              <div className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[90px_1fr_300px_auto] items-center gap-4 md:gap-8 px-2 md:px-6 py-7 md:py-9">
+              <div className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[90px_1fr_300px_auto] items-center gap-4 md:gap-8 px-2 md:px-6 py-6 md:py-9">
                 <span className="font-display text-gold text-sm md:text-base font-700">{s.num}</span>
                 <div>
-                  <h3 className="font-display font-800 uppercase tracking-tight text-2xl md:text-4xl xl:text-5xl text-bone transition-transform duration-500 group-hover:translate-x-3">
+                  <h3 className="font-display font-800 uppercase tracking-tight text-xl sm:text-2xl md:text-4xl xl:text-5xl text-bone transition-transform duration-500 group-hover:translate-x-3">
                     {s.title}
                   </h3>
                   <div className="svc-desc">
+                    <div className="md:hidden img-rounded aspect-[16/10] mt-4">
+                      <img src={s.img} alt="" className="w-full h-full object-cover" loading="lazy" />
+                    </div>
                     <p className="text-mist text-sm md:text-base max-w-lg pt-4">{s.desc}</p>
                     <div className="flex flex-wrap gap-2 pt-3">
                       {s.tags.map((t) => (

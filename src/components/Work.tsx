@@ -34,7 +34,7 @@ export function Work() {
 
   return (
     <section ref={section} id="projectos" className="relative bg-coal overflow-hidden">
-      <div className="md:h-screen flex flex-col justify-center py-24 md:py-0">
+      <div className="md:h-screen flex flex-col justify-center py-20 md:py-0">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 mb-10 md:mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>
             <Reveal>
@@ -42,23 +42,23 @@ export function Work() {
             </Reveal>
             <SplitWords
               as="h2"
-              text="O tipo de impacto digital que entregamos."
+              text="Marketing, web e software — o que entregamos."
               className="font-display font-800 text-4xl md:text-6xl tracking-tight text-bone max-w-3xl"
             />
           </div>
-          <Reveal delay={0.1} className="hidden md:block">
-            <p className="text-dim text-sm">Continua a descer — os projectos movem-se contigo.</p>
+          <Reveal delay={0.1}>
+            <p className="text-dim text-sm"><span className="md:hidden">Desliza para o lado →</span><span className="hidden md:inline">Continua a descer — os exemplos movem-se contigo.</span></p>
           </Reveal>
         </div>
 
         <div
           ref={track}
-          className="hscroll-track flex flex-col md:flex-row gap-6 md:gap-10 px-6 md:px-10 md:w-max"
+          className="hscroll-track no-scrollbar flex flex-row overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-4 md:gap-10 px-6 md:px-10 md:w-max scroll-px-6"
         >
           {PROJECTS.map((p, i) => (
             <article
               key={p.title}
-              className="group relative shrink-0 w-full md:w-[62vw] lg:w-[52vw] xl:w-[44vw] img-rounded bg-surface border border-line"
+              className="group relative shrink-0 w-[84vw] snap-start md:w-[62vw] lg:w-[52vw] xl:w-[44vw] img-rounded bg-surface border border-line"
               data-cursor="ver"
             >
               <div className="relative aspect-[16/9] overflow-hidden">

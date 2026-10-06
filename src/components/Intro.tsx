@@ -29,7 +29,7 @@ export function Intro({ onDone }: { onDone: () => void }) {
   if (gone) return null
   return (
     <div ref={ref} className="fixed inset-0 z-[100] bg-ink flex flex-col items-center justify-center gap-6">
-      <img ref={logo} src="/logo.png" alt="MD Business" className="w-20 h-20 md:w-24 md:h-24 object-contain invert" />
+      <img ref={logo} src="/logo.png" alt="MD Business" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
       <div ref={word} className="font-display text-xs tracking-[0.4em] uppercase text-mist">
         MD Business
       </div>

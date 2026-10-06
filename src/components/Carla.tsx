@@ -20,7 +20,7 @@ function answer(input: string): string {
     return `Os nossos preços (Kz):\n\nLanding Pages:\n${lp}\n\nWebsites:\n${wb}\n\nO plano Corporativo é personalizado conforme o projecto.`
   }
   if (/servi|o que faz|ofere/.test(t))
-    return 'Os nossos serviços:\n• Landing Pages (Comercial, Especializada, Cinematográfica)\n• Websites & Plataformas\n• Sistemas & SaaS\n• E-Commerce\n• Branding Digital\n• Automação & IA\n\nPosso explicar o que cada um inclui ou como avançar.'
+    return 'Somos agência de marketing digital e empresa de software:\n• Marketing Digital & Tráfego Pago\n• Redes Sociais & Conteúdo\n• Branding & Identidade\n• Websites & Landing Pages\n• Software à Medida (sistemas, CRM, dashboards)\n• Apps, E-commerce & Automação\n\nPosso explicar o que cada um inclui ou como avançar.'
   if (/plano|confirmar|comprar|pedido|contrat/.test(t))
     return 'É simples:\n1) Adicione o plano ao pedido na secção Planos;\n2) Confirme via WhatsApp;\n3) Após confirmarmos o pagamento, o projecto começa;\n4) Acompanha o progresso com a nossa equipa.'
   if (/pagar|pagamento|multicaixa|transfer/.test(t))

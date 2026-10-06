@@ -46,7 +46,7 @@ export function Nav() {
             className="flex items-center gap-3"
             aria-label="MD Business — início"
           >
-            <img src="/logo.png" alt="MD Business" className="w-9 h-9 object-contain invert" />
+            <img src="/logo.png" alt="MD Business" className="w-9 h-9 object-contain" />
             <span className="font-display font-800 tracking-tight text-sm hidden sm:block">MD BUSINESS</span>
           </a>
 
@@ -101,7 +101,7 @@ export function Nav() {
       {menu && (
         <div ref={menuRef} className="fixed inset-0 z-[95] bg-ink flex flex-col" role="dialog" aria-label="Menu">
           <div className="flex items-center justify-between px-6 pt-7">
-            <img src="/logo.png" alt="MD Business" className="w-10 h-10 object-contain invert" />
+            <img src="/logo.png" alt="MD Business" className="w-10 h-10 object-contain" />
             <button
               onClick={() => setMenu(false)}
               aria-label="Fechar menu"

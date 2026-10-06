@@ -2,7 +2,7 @@ import type { DataStatus } from './types'
 
 export interface Plan {
   id: string
-  group: 'Landing Page' | 'Website' | 'Corporativo'
+  group: 'Landing Page' | 'Website' | 'Marketing' | 'Corporativo'
   name: string
   price: number | null
   desc: string
@@ -61,11 +61,19 @@ export const PLANS: Plan[] = [
     features: ['Páginas Ilimitadas', 'Multi-idiomas', 'Suporte Prioritário'],
   },
   {
+    id: 'marketing-mensal',
+    group: 'Marketing',
+    name: 'Gestão de Marketing Digital',
+    price: null,
+    desc: 'Gestão mensal de redes sociais e campanhas pagas, com orçamento definido conforme os objectivos.',
+    features: ['Calendário de Conteúdo', 'Design de Posts', 'Campanhas Meta & Google', 'Relatório Mensal'],
+  },
+  {
     id: 'corporativo',
     group: 'Corporativo',
     name: 'Corporativo de Alto Nível',
     price: null,
-    desc: 'Soluções de engenharia empresarial. Sistemas sob medida e arquitectura exclusiva.',
+    desc: 'Software à medida para empresas: sistemas de gestão, aplicações e integrações.',
     features: ['IA Integrada', 'Sistemas Customizados', 'Segurança Robusta'],
   },
 ]

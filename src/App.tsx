@@ -7,6 +7,7 @@ import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Marquee } from './components/Marquee'
 import { Statement } from './components/Statement'
+import { Founder } from './components/Founder'
 import { Services } from './components/Services'
 import { Work } from './components/Work'
 import { Stats } from './components/Stats'
@@ -32,6 +33,7 @@ export default function App() {
             <Hero started={started} />
             <Marquee />
             <Statement />
+            <Founder />
             <Services />
             <Work />
             <Stats />

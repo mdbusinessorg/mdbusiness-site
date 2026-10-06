@@ -1,9 +1,15 @@
 export const BUSINESS = {
   name: 'MD Business',
   shortName: 'MD',
-  tagline: 'Sistemas Digitais de Alto Impacto',
+  tagline: 'Marketing Digital & Desenvolvimento de Software',
   positioning:
-    'Estúdio digital em Luanda, Angola. Landing pages cinematográficas, websites, sistemas web e automação para marcas que decidiram liderar.',
+    'Agência de marketing digital e empresa de desenvolvimento de software em Luanda, Angola. Estratégia, conteúdo, websites, sistemas e aplicações para empresas que querem crescer.',
   location: 'Luanda, Angola',
   founded: undefined as string | undefined,
+}
+
+export const FOUNDER = {
+  name: 'Matias Domingos',
+  role: 'CEO & Fundador',
+  photo: '/img/ceo.jpg',
 }

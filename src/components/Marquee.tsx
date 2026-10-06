@@ -1,5 +1,5 @@
 export function Marquee() {
-  const items = ['Landing Pages', 'Websites', 'Sistemas & SaaS', 'E-Commerce', 'Branding', 'Automação & IA', 'SEO', 'Motion Design']
+  const items = ['Marketing Digital', 'Redes Sociais', 'Tráfego Pago', 'Branding', 'Websites', 'Software à Medida', 'Apps Mobile', 'E-commerce', 'Automação']
   const row = [...items, ...items]
   return (
     <div className="bg-gold text-ink py-4 overflow-hidden border-y border-ink/20" aria-hidden>

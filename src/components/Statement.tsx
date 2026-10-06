@@ -4,21 +4,20 @@ import { PAIN_POINTS } from '../data/faq'
 /** Editorial "crafting" section — big heading + supporting copy + floating image composition */
 export function Statement() {
   return (
-    <section id="sobre" className="relative bg-coal py-28 md:py-40 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-2 gap-16 items-start">
+    <section id="sobre" className="relative bg-coal py-20 md:py-40 overflow-hidden">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
         <div>
           <Reveal>
             <p className="text-xs tracking-[0.35em] uppercase text-gold mb-8">A Nossa Essência</p>
           </Reveal>
           <SplitWords
             as="h2"
-            text="Construímos marcas digitais com significado e experiências que se destacam."
+            text="Uma agência de marketing e uma empresa de software. Na mesma equipa."
             className="font-display font-800 text-4xl md:text-5xl xl:text-6xl leading-[1.02] tracking-tight text-bone"
           />
           <Reveal delay={0.15} className="mt-10 max-w-md">
             <p className="text-mist text-lg leading-relaxed">
-              Uma equipa técnica obcecada por rigor, performance e impacto digital em toda Angola e África.
-              Cada sistema que entregamos é pensado para converter, escalar e transmitir autoridade imediata.
+              Ajudamos empresas angolanas a serem encontradas, escolhidas e bem geridas: estratégia e conteúdo para atrair clientes, e websites, sistemas e aplicações para os servir melhor.
             </p>
           </Reveal>
 
@@ -32,13 +31,23 @@ export function Statement() {
           </div>
         </div>
 
+        {/* mobile image composition */}
+        <div className="md:hidden relative pb-6">
+          <div className="img-rounded aspect-[4/5]">
+            <img src="/img/statement-1.jpg" alt="Equipa em sessão de estratégia" className="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div className="img-rounded absolute bottom-0 right-4 w-[42%] aspect-square border-4 border-coal">
+            <img src="/img/statement-3.jpg" alt="Código em desenvolvimento" className="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+
         {/* floating bento composition */}
         <div className="relative h-[560px] md:h-[680px] hidden md:block">
           <Parallax speed={0.08} className="absolute top-0 right-0 w-[62%]">
             <div className="img-rounded aspect-[4/5]" data-cursor="ver">
               <img
                 src="/img/statement-1.jpg"
-                alt="Trabalho de estúdio"
+                alt="Equipa em sessão de estratégia"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -48,7 +57,7 @@ export function Statement() {
             <div className="img-rounded aspect-square">
               <img
                 src="/img/statement-2.jpg"
-                alt="Detalhe de design"
+                alt="Equipa a trabalhar"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -58,14 +67,14 @@ export function Statement() {
             <div className="img-rounded aspect-[3/4]">
               <img
                 src="/img/statement-3.jpg"
-                alt="Interface em desenvolvimento"
+                alt="Código em desenvolvimento"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
           </Parallax>
           <Reveal className="absolute top-[8%] left-[6%] w-24 md:w-28">
-            <img src="/logo.png" alt="" className="w-full invert opacity-90" />
+            <img src="/logo.png" alt="" className="w-full opacity-90" />
           </Reveal>
         </div>
       </div>

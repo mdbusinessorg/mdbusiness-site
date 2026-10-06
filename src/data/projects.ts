@@ -11,39 +11,37 @@ export interface Project {
 
 /**
  * Capability showcases — describe the kind of work MD Business delivers.
- * These are NOT named client projects (none could be verified from the old
- * site); each entry is flagged 'placeholder' so the UI never presents them
- * as real client work. Replace with real case studies when available.
+ * NOT named client projects; flagged 'placeholder' until real case studies exist.
  */
 export const PROJECTS: Project[] = [
   {
-    title: 'Landing Page Cinematográfica',
-    category: 'Landing Page Premium',
-    desc: 'Exemplo de entrega: página de conversão com animações avançadas, smooth scroll e carregamento instantâneo.',
-    tech: ['React', 'GSAP', 'Tailwind'],
+    title: 'Campanhas & Redes Sociais',
+    category: 'Marketing Digital',
+    desc: 'Planeamento de conteúdo, gestão de páginas e campanhas pagas com relatórios mensais de resultados.',
+    tech: ['Meta Ads', 'Google Ads', 'Conteúdo'],
     img: '/img/project-1.jpg',
     status: 'placeholder',
   },
   {
-    title: 'Plataforma Web Corporativa',
-    category: 'Sistema Web Completo',
-    desc: 'Exemplo de entrega: SaaS com dashboard analytics, gestão de utilizadores e pagamentos integrados.',
-    tech: ['React', 'Supabase', 'Stripe'],
+    title: 'Sistema de Gestão',
+    category: 'Software à Medida',
+    desc: 'Plataforma web com utilizadores, permissões, relatórios e dashboards para a operação diária.',
+    tech: ['React', 'Supabase', 'Dashboards'],
     img: '/img/project-2.jpg',
     status: 'placeholder',
   },
   {
-    title: 'Portal Institucional',
-    category: 'Website Institucional',
-    desc: 'Exemplo de entrega: presença digital de autoridade com gestão de conteúdo e design premium.',
-    tech: ['TypeScript', 'CMS', 'SEO'],
+    title: 'Website Institucional',
+    category: 'Desenvolvimento Web',
+    desc: 'Presença digital profissional com páginas de serviços, contactos e SEO para ser encontrado no Google.',
+    tech: ['TypeScript', 'SEO', 'Responsivo'],
     img: '/img/project-3.jpg',
     status: 'placeholder',
   },
   {
-    title: 'Loja E-Commerce',
-    category: 'E-Commerce',
-    desc: 'Exemplo de entrega: loja online com catálogo dinâmico, pagamentos e pedidos via WhatsApp.',
+    title: 'Loja Online',
+    category: 'E-commerce',
+    desc: 'Catálogo de produtos, carrinho e pedidos directos via WhatsApp, com painel de gestão.',
     tech: ['Next.js', 'Supabase', 'WhatsApp'],
     img: '/img/project-4.jpg',
     status: 'placeholder',

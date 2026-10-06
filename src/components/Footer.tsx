@@ -14,10 +14,10 @@ const COLS = [
   {
     t: 'Serviços',
     links: [
-      ['Landing Pages', '#servicos'],
+      ['Marketing Digital', '#servicos'],
+      ['Redes Sociais', '#servicos'],
       ['Websites', '#servicos'],
-      ['Sistemas & SaaS', '#servicos'],
-      ['Automação & IA', '#servicos'],
+      ['Software à Medida', '#servicos'],
     ],
   },
   {
@@ -34,15 +34,15 @@ const COLS = [
 export function Footer() {
   return (
     <footer className="relative bg-coal border-t border-line overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 pt-20 pb-10">
-        <div className="grid md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 pb-16">
-          <div>
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 pt-16 md:pt-20 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 pb-12 md:pb-16">
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <img src="/logo.png" alt="MD Business" className="w-11 h-11 object-contain invert" />
+              <img src="/logo.png" alt="MD Business" className="w-11 h-11 object-contain" />
               <span className="font-display font-800 tracking-tight">MD BUSINESS</span>
             </div>
             <p className="text-dim text-sm max-w-xs leading-relaxed">
-              Sistemas de alto desempenho para organizações que definem o futuro. O seu parceiro estratégico em toda Angola.
+              Agência de marketing digital e desenvolvimento de software em Luanda, Angola.
             </p>
             <a href={`mailto:${CONTACT.email}`} className="block text-mist text-sm mt-4 hover:text-gold transition-colors">
               {CONTACT.email}
@@ -82,8 +82,8 @@ export function Footer() {
         </Parallax>
 
         <div className="mt-12 pt-8 border-t border-line flex flex-wrap items-center justify-between gap-4 text-xs text-dim">
-          <span>© 2026 MD Business. Angola, África. Designed for the 1%.</span>
-          <span>Excelência Técnica · Estratégia & Resultados</span>
+          <span>© 2026 MD Business. Luanda, Angola.</span>
+          <span>Marketing Digital · Desenvolvimento de Software</span>
         </div>
       </div>
     </footer>

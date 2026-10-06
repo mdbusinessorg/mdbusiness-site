@@ -1,5 +1,9 @@
 export const FAQS = [
   {
+    q: 'Fazem marketing e desenvolvimento de software?',
+    a: 'Sim. A MD Business junta as duas áreas: gestão de redes sociais, campanhas pagas e branding, e também websites, sistemas, aplicações e automações — tudo com a mesma equipa.',
+  },
+  {
     q: 'Que métodos de pagamento aceitam?',
     a: 'Aceitamos transferência bancária (Angola), Multicaixa Express, e pagamentos internacionais. O pagamento é dividido em duas fases: 50% no início do projecto e 50% na entrega final aprovada.',
   },
@@ -23,15 +27,15 @@ export const FAQS = [
 
 export const PAIN_POINTS = [
   {
-    pain: 'Processos manuais lentos e propensos a erro.',
-    gain: 'Automação inteligente e fluxos de trabalho digitais integrados.',
+    pain: 'Redes sociais paradas e sem estratégia.',
+    gain: 'Conteúdo planeado, campanhas pagas e relatórios de resultados.',
   },
   {
-    pain: 'Presença digital genérica e de baixo impacto.',
-    gain: 'Interfaces cinematográficas premium que transmitem autoridade imediata.',
+    pain: 'Presença digital fraca que não transmite confiança.',
+    gain: 'Marca, website e comunicação alinhados e profissionais.',
   },
   {
-    pain: 'Dificuldade em escalar operações e gerir leads.',
-    gain: 'Sistemas de CRM e BI customizados para decisões baseadas em dados.',
+    pain: 'Processos manuais lentos e informação dispersa.',
+    gain: 'Software à medida e automações que organizam a operação.',
   },
 ]

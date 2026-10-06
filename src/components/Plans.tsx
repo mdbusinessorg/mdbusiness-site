@@ -5,7 +5,7 @@ import { Reveal, SplitWords } from '../motion/Reveal'
 import { fmtKz, useCart } from '../state/cart'
 import { Magnetic } from '../motion/Magnetic'
 
-const GROUPS = ['Todos', 'Landing Pages', 'Websites', 'Corporativo'] as const
+const GROUPS = ['Todos', 'Landing Pages', 'Websites', 'Marketing', 'Corporativo'] as const
 
 const PLANS_DATA = ProductService.list().data
 
@@ -18,33 +18,34 @@ export function Plans() {
     g === 'Todos' ||
     (g === 'Landing Pages' && p.group === 'Landing Page') ||
     (g === 'Websites' && p.group === 'Website') ||
+    (g === 'Marketing' && p.group === 'Marketing') ||
     (g === 'Corporativo' && p.group === 'Corporativo')
 
   return (
-    <section id="planos" className="bg-coal py-28 md:py-36">
+    <section id="planos" className="bg-coal py-20 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-8 mb-14">
+        <div className="flex flex-wrap items-end justify-between gap-8 mb-10 md:mb-14">
           <div>
             <Reveal>
               <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6">Preços</p>
             </Reveal>
             <SplitWords
               as="h2"
-              text="Escolhe o teu nível de impacto."
+              text="Planos claros. Preços em Kwanza."
               className="font-display font-800 text-4xl md:text-6xl tracking-tight text-bone"
             />
             <Reveal delay={0.1}>
               <p className="text-mist mt-5 max-w-lg">
-                Da landing page essencial ao sistema corporativo sob medida — escolha o nível de impacto digital que o seu negócio precisa.
+                Da landing page ao software à medida, passando pela gestão de marketing mensal. Escolha o plano e confirme pelo WhatsApp.
               </p>
             </Reveal>
           </div>
-          <Reveal delay={0.15} className="flex flex-wrap gap-2">
+          <Reveal delay={0.15} className="flex gap-2 overflow-x-auto no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 sm:flex-wrap max-w-[100vw]">
             {GROUPS.map((x) => (
               <button
                 key={x}
                 onClick={() => setG(x)}
-                className={`px-5 py-2.5 rounded-full text-sm border transition-colors ${
+                className={`shrink-0 px-5 py-2.5 rounded-full text-sm border transition-colors ${
                   g === x ? 'bg-bone text-ink border-bone' : 'border-line-strong text-mist hover:text-bone'
                 }`}
               >
@@ -54,13 +55,13 @@ export function Plans() {
           </Reveal>
         </div>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="flex sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-px-6">
           {PLANS_DATA.filter(filter).map((p, i) => {
             const featured = p.id === 'lp-cine' || p.id === 'web-pro'
             return (
-              <Reveal key={p.id} delay={(i % 3) * 0.08}>
+              <Reveal key={p.id} delay={(i % 3) * 0.08} className="shrink-0 w-[82vw] sm:w-auto snap-start">
                 <article
-                  className={`group relative img-rounded p-8 flex flex-col h-full border transition-colors duration-500 ${
+                  className={`group relative img-rounded p-7 md:p-8 flex flex-col h-full border transition-colors duration-500 ${
                     featured
                       ? 'bg-gold text-ink border-gold'
                       : 'bg-surface border-line hover:border-line-strong'

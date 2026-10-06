@@ -36,7 +36,7 @@ export function Cta() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/70 to-ink" />
       </div>
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 py-36 md:py-52 text-center">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10 py-24 md:py-52 text-center">
         <Reveal>
           <p className="text-xs tracking-[0.35em] uppercase text-gold mb-8">Vamos Conversar</p>
         </Reveal>
@@ -48,7 +48,7 @@ export function Cta() {
         </Reveal>
         <Reveal delay={0.2}>
           <p className="text-mist text-lg max-w-xl mx-auto mt-8">
-            Contacte-nos hoje e descubra como podemos transformar a sua presença digital.
+            Conte-nos o seu objectivo — mais clientes, uma marca mais forte ou um sistema para organizar a empresa. Respondemos no WhatsApp.
           </p>
         </Reveal>
         <Reveal delay={0.3} className="mt-12">
