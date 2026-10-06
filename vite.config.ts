@@ -2,7 +2,7 @@ import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-const DEFAULT_SITE_URL = 'https://mdbusinessorg.github.io/mdbusiness-site'
+const DEFAULT_SITE_URL = 'https://mdbusiness-v2.netlify.app'
 
 /**
  * Injects the configured site URL into index.html and generates
