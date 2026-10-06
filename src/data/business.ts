@@ -11,5 +11,12 @@ export const BUSINESS = {
 export const FOUNDER = {
   name: 'Matias Domingos',
   role: 'CEO & Fundador',
+  credentials: [
+    'Maintenance Technician',
+    'Electromechanical Technician',
+    'Web Developer',
+    'PMP Techniques Planner',
+  ],
+  experience: '+3 anos de experiência',
   photo: '/img/ceo.jpg',
 }

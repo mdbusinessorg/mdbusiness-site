@@ -38,6 +38,12 @@ export function Founder() {
               comunicação clara do início à entrega.
             </p>
           </Reveal>
+          <Reveal delay={0.15} className="mt-8 flex flex-wrap gap-2">
+            {FOUNDER.credentials.map((c) => (
+              <span key={c} className="px-4 py-2 rounded-full border border-line-strong text-xs text-mist uppercase tracking-wider">{c}</span>
+            ))}
+            <span className="px-4 py-2 rounded-full bg-gold/15 border border-gold/40 text-xs text-gold uppercase tracking-wider">{FOUNDER.experience}</span>
+          </Reveal>
           <Reveal delay={0.2} className="mt-10 flex flex-wrap gap-3">
             <a
               href={CONTACT.whatsapp}

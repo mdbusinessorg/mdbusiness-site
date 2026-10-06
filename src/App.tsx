@@ -33,13 +33,13 @@ export default function App() {
             <Hero started={started} />
             <Marquee />
             <Statement />
-            <Founder />
             <Services />
             <Work />
             <Stats />
             <Testimonials />
             <Plans />
             <Faq />
+            <Founder />
             <Cta />
           </main>
           <Footer />

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap, reducedMotion } from '../motion/gsap'
 import { Magnetic } from '../motion/Magnetic'
-import { FOUNDER } from '../data/business'
 import { CONTACT } from '../data/contact'
 
 const CHIPS = ['Marketing Digital', 'Redes Sociais', 'Branding', 'Websites', 'Software', 'Apps']
@@ -44,9 +43,9 @@ export function Hero({ started }: { started: boolean }) {
       <div ref={bg} className="absolute inset-0 will-change-transform">
         <div className="hero-img absolute right-0 bottom-0 h-[62%] w-full md:top-0 md:h-full md:w-[46%]">
           <img
-            src={FOUNDER.photo}
-            alt={`${FOUNDER.name}, ${FOUNDER.role}`}
-            className="h-full w-full object-cover object-[50%_20%]"
+            src="/img/hero.jpg"
+            alt="Equipa em reunião de estratégia"
+            className="h-full w-full object-cover opacity-70"
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink md:bg-gradient-to-r md:from-ink md:via-ink/20 md:to-transparent" />
@@ -60,7 +59,7 @@ export function Hero({ started }: { started: boolean }) {
             <p className="hero-label text-[11px] md:text-sm tracking-[0.3em] uppercase text-gold mb-5 md:mb-6 opacity-0">
               Agência de Marketing &amp; Software · Luanda
             </p>
-            <h1 className="hero-title font-display font-900 uppercase leading-[0.9] tracking-tight text-[clamp(2.9rem,12.5vw,9.5rem)] lg:text-[clamp(4rem,7vw,8.5rem)] [&_span]:whitespace-nowrap">
+            <h1 className="hero-title font-display font-900 uppercase leading-[0.9] tracking-tight text-[clamp(2.7rem,11.5vw,9.5rem)] lg:text-[clamp(4rem,7vw,8.5rem)] [&_span]:whitespace-nowrap">
               <span className="hero-line rl"><span>Marketing</span></span>
               <span className="hero-line rl"><span>&amp; Software</span></span>
               <span className="hero-line rl"><span className="text-gold">de Impacto.</span></span>
@@ -89,8 +88,8 @@ export function Hero({ started }: { started: boolean }) {
         <div className="flex flex-col gap-6">
           <div className="hero-chip opacity-0 self-start md:self-end flex items-center gap-3 rounded-full border border-line-strong bg-ink/50 backdrop-blur-md pl-2 pr-5 py-2">
             <span className="w-2 h-2 rounded-full bg-gold ml-2" />
-            <span className="text-xs md:text-sm text-bone font-medium">{FOUNDER.name}</span>
-            <span className="text-xs text-dim">{FOUNDER.role}</span>
+            <span className="text-xs md:text-sm text-bone font-medium">Agência &amp; Software</span>
+            <span className="text-xs text-dim">Luanda, Angola</span>
           </div>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="hidden sm:flex flex-wrap gap-3">
