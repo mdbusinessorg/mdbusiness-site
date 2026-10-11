@@ -60,25 +60,25 @@ export function Hero({ started }: { started: boolean }) {
               Agência de Marketing &amp; Software · Luanda
             </p>
             <h1 className="hero-title font-display font-900 uppercase leading-[0.9] tracking-tight text-[clamp(2.7rem,11.5vw,9.5rem)] lg:text-[clamp(4rem,7vw,8.5rem)] [&_span]:whitespace-nowrap">
-              <span className="hero-line rl"><span>Marketing</span></span>
-              <span className="hero-line rl"><span>&amp; Software</span></span>
-              <span className="hero-line rl"><span className="text-gold">de Impacto.</span></span>
+              <span className="hero-line rl"><span>Transformamos</span></span>
+              <span className="hero-line rl"><span>Negócios em</span></span>
+              <span className="hero-line rl"><span className="text-gold">Marcas Digitais.</span></span>
             </h1>
             <p className="hero-side mt-6 max-w-sm text-mist text-base leading-relaxed lg:hidden">
-              <span className="block opacity-0">Estratégia, redes sociais, websites e sistemas para empresas angolanas que querem crescer.</span>
+              <span className="block opacity-0">Websites, landing pages e lojas virtuais que inspiram confiança, conquistam clientes e fazem empresas crescer online.</span>
             </p>
           </div>
 
           <div className="hero-side hidden lg:flex flex-col items-end gap-8 pt-6">
             <p className="text-mist text-lg max-w-[300px] text-right leading-relaxed opacity-0">
-              Estratégia e conteúdo para atrair clientes. Websites, sistemas e apps para os servir melhor.
+              Websites, landing pages e lojas virtuais que inspiram confiança, conquistam clientes e fazem empresas crescer online.
             </p>
             <Magnetic className="opacity-0">
               <a
-                href="#contacto"
-                className="group inline-flex items-center gap-3 px-7 py-4 rounded-full border border-gold/60 text-gold font-display font-700 text-sm uppercase tracking-wider hover:bg-gold hover:text-ink transition-colors"
+                href="/orcamento"
+                className="group inline-flex items-center gap-3 px-7 py-4 rounded-full border border-bone/40 text-bone font-display font-700 text-sm uppercase tracking-wider hover:bg-bone hover:text-ink transition-colors"
               >
-                Falar connosco
+                Iniciar o meu projecto
                 <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
             </Magnetic>
@@ -113,7 +113,7 @@ export function Hero({ started }: { started: boolean }) {
                   href="#servicos"
                   className="group w-full inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-bone text-ink font-display font-700 text-sm uppercase tracking-wider"
                 >
-                  Serviços
+                  Explorar serviços
                   <span className="inline-block transition-transform duration-300 group-hover:translate-y-1">↓</span>
                 </a>
               </Magnetic>

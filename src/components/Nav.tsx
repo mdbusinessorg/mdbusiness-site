@@ -2,13 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap, reducedMotion } from '../motion/gsap'
 import { useCart } from '../state/cart'
 import { Magnetic } from '../motion/Magnetic'
+import { Link } from 'react-router-dom'
 import { NAV_LINKS as LINKS } from '../data/navigation'
 import { CONTACT } from '../data/contact'
+import { useAuth } from '../lib/auth'
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menu, setMenu] = useState(false)
   const { items, setOpen } = useCart()
+  const { user } = useAuth()
   const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -78,13 +81,19 @@ export function Nav() {
                 </span>
               )}
             </button>
+            <Link
+              to={user ? '/portal' : '/entrar'}
+              className="hidden md:block px-5 py-2.5 rounded-full border border-line-strong text-sm text-mist hover:text-bone hover:border-bone/40 transition-colors"
+            >
+              {user ? 'Área de cliente' : 'Entrar'}
+            </Link>
             <Magnetic className="hidden md:block">
-              <button
-                onClick={() => go('#planos')}
-                className="px-6 py-2.5 rounded-full bg-gold text-ink text-sm font-semibold hover:bg-gold-soft transition-colors"
+              <Link
+                to="/orcamento"
+                className="px-6 py-2.5 rounded-full bg-bone text-ink text-sm font-semibold hover:bg-white transition-colors"
               >
                 Iniciar Projecto
-              </button>
+              </Link>
             </Magnetic>
             <button
               onClick={() => setMenu(true)}
@@ -115,12 +124,26 @@ export function Nav() {
               <button
                 key={l.href}
                 onClick={() => go(l.href)}
-                className="m-item text-left font-display font-800 uppercase tracking-tight text-5xl sm:text-6xl text-bone hover:text-gold transition-colors py-1"
+                className="m-item text-left font-display font-800 uppercase tracking-tight text-5xl sm:text-6xl text-bone hover:text-white transition-colors py-1"
                 style={{ transitionDelay: `${i * 20}ms` }}
               >
                 {l.label}
               </button>
             ))}
+            <Link
+              to="/orcamento"
+              onClick={() => setMenu(false)}
+              className="m-item text-left font-display font-800 uppercase tracking-tight text-5xl sm:text-6xl text-bone hover:text-white transition-colors py-1"
+            >
+              Pedir Orçamento
+            </Link>
+            <Link
+              to={user ? '/portal' : '/entrar'}
+              onClick={() => setMenu(false)}
+              className="m-item text-left font-display font-800 uppercase tracking-tight text-5xl sm:text-6xl text-dim hover:text-bone transition-colors py-1"
+            >
+              {user ? 'Área de cliente' : 'Entrar'}
+            </Link>
           </div>
           <div className="px-8 pb-10 flex items-center justify-between text-sm text-dim">
             <span>{CONTACT.email}</span>
