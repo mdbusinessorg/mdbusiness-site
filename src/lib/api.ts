@@ -199,7 +199,8 @@ export async function submitQuote(input: {
     p_budget: input.budget || null,
   })
   if (error) throw error
-  return data as { id: string; ref_code: string }
+  const row = Array.isArray(data) ? data[0] : data
+  return row as { id: string; ref_code: string }
 }
 
 /* ---------- client portal ---------- */
@@ -399,7 +400,10 @@ export async function updateProject(id: string, patch: Partial<Project>) {
 
 export async function upsertStage(stage: Partial<Stage> & { project_id: string }) {
   const sb = requireSupabase()
-  const { error } = await sb.from('project_stages').upsert(stage)
+  const { id, ...rest } = stage
+  const { error } = id
+    ? await sb.from('project_stages').update(rest).eq('id', id)
+    : await sb.from('project_stages').insert(rest)
   if (error) throw error
 }
 

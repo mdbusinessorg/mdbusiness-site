@@ -363,9 +363,14 @@ export function AdminProject() {
   async function review(p: Payment, status: 'confirmed' | 'rejected' | 'partial') {
     const reason = status === 'rejected' ? window.prompt('Motivo da rejeição:') : null
     if (status === 'rejected' && reason === null) return
-    const amount = status === 'partial' ? Number(window.prompt('Valor recebido (Kz):')?.replace(/\D/g, '')) : null
+    const amount = status === 'partial'
+      ? Number(window.prompt('Valor recebido (Kz):')?.replace(/\D/g, ''))
+      : status === 'confirmed'
+        ? (p.amount_due ?? p.amount_declared ?? null)
+        : null
+    if (status === 'partial' && !Number.isFinite(amount)) return
     try {
-      await reviewPayment(p.id, status, reason, Number.isFinite(amount) ? amount : null)
+      await reviewPayment(p.id, status, reason, Number.isFinite(amount as number) ? (amount as number) : null)
       toast(status === 'confirmed' ? 'Pagamento confirmado.' : status === 'rejected' ? 'Comprovativo rejeitado.' : 'Pagamento parcial registado.')
       load()
     } catch (e) { toast(e instanceof Error ? e.message : 'Erro', true) }

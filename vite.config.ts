@@ -35,8 +35,8 @@ export default defineConfig(({ mode }) => {
   const siteUrl = (env.VITE_SITE_URL ?? DEFAULT_SITE_URL).replace(/\/$/, '')
 
   return {
-    // relative base — the build runs from any path or domain
-    base: './',
+    // absolute base — SPA served from the domain root; deep routes must resolve /assets
+    base: '/',
     plugins: [react(), tailwindcss(), siteMeta(siteUrl)],
     build: {
       target: 'es2020',
